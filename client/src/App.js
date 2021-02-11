@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { Button } from "@material-ui/core";
 
 function App() {
   return (
     <div className="App">
-      <h1>Helloworld by dick</h1>
-      <h1>Helloworld by johnny</h1>
+      <Button color="primary">Hello World</Button>
     </div>
   );
 }
