@@ -4,6 +4,7 @@
 /client/node_modules
 /client/.eslintcache
 /server/node_modules
+/server/.env
 /node_modules
 /.pnp
 .pnp.js
