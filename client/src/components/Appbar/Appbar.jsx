@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // material UI
 import Toolbar from "@material-ui/core/Toolbar";
@@ -70,8 +70,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Appbar() {
+export default function Appbar(props) {
   const classes = useStyles();
+
+  const [stockticker, setstockticker] = useState(null);
+
+  const submitTicker = (e) => {
+    e.preventDefault();
+    console.log("APP bar inputed:  " + stockticker);
+    props.ticker(stockticker);
+  };
+
   return (
     <div>
       <AppBar position="fixed" className={classes.appBar}>
@@ -84,14 +93,19 @@ export default function Appbar() {
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
-            <InputBase
-              placeholder="Stock ticker"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
+            <form onSubmit={submitTicker}>
+              <InputBase
+                placeholder="Stock ticker"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ "aria-label": "search" }}
+                onChange={(e) => {
+                  setstockticker(e.target.value);
+                }}
+              />
+            </form>
           </div>
         </Toolbar>
       </AppBar>
