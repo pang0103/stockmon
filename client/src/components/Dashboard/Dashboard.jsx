@@ -7,6 +7,9 @@ import StockPrice from "../StockPrice/StockPrice";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   content: {
@@ -27,16 +30,12 @@ export default function Dashboard(props) {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.root}>
       <Sidebar />
       <Appbar ticker={setTicker} />
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <div>
-          <p>asd</p>
-        </div>
-        sed vulputate odio. Morbi tincidunt ornare massa eget egestas purus
-        viverra accumsan i
+        <StockPrice ticker={stockticker} />
       </main>
       {/* <StockPrice ticker={stockticker} /> */}
     </div>
