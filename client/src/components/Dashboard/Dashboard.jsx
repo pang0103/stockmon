@@ -37,7 +37,6 @@ export default function Dashboard(props) {
         <div className={classes.toolbar} />
         <StockPrice ticker={stockticker} />
       </main>
-      {/* <StockPrice ticker={stockticker} /> */}
     </div>
   );
 }
