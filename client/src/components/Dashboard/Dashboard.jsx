@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
   },
+  stockQuote: {
+    height: "1000px",
+    width: "1000px",
+  },
 }));
 
 export default function Dashboard(props) {
@@ -35,7 +39,9 @@ export default function Dashboard(props) {
       <Appbar ticker={setTicker} />
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <StockPrice ticker={stockticker} />
+        <div className={classes.stockQuote}>
+          <StockPrice ticker={stockticker} />
+        </div>
       </main>
     </div>
   );
