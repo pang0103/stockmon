@@ -50,9 +50,7 @@ export default function HistoryChart(props) {
         text: "CandleStick Chart",
         align: "left",
       },
-      xaxis: {
-        type: "datetime",
-      },
+      xaxis: {},
       yaxis: {
         tooltip: {
           enabled: true,
