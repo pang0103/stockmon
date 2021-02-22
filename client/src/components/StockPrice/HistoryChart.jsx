@@ -4,6 +4,24 @@ import ApexCharts from "react-apexcharts";
 export default function HistoryChart(props) {
   const [chartData, setchartData] = useState([]);
 
+  const [chartSetting, setchartSetting] = useState({
+    options: {
+      chart: {
+        type: "candlestick",
+        height: 500,
+      },
+      title: {
+        align: "left",
+      },
+      xaxis: {},
+      yaxis: {
+        tooltip: {
+          enabled: true,
+        },
+      },
+    },
+  });
+
   useEffect(() => {
     console.log("loaded");
   });
@@ -62,7 +80,7 @@ export default function HistoryChart(props) {
   return (
     <div>
       <ApexCharts
-        options={settings.options}
+        options={chartSetting.options}
         series={[{ data: chartData }]}
         type="candlestick"
       />

@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const authRoutes = require("./routes/authRoutes");
 const stockRoutes = require("./routes/stockRoutes");
 const tweetRoutes = require("./routes/tweetRoutes");
 
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/auth", authRoutes);
 app.use("/stock", stockRoutes);
 app.use("/tweet", tweetRoutes);
 

@@ -11,7 +11,7 @@ export default function CompanyOverview(props) {
   return (
     <div>
       <h2>Company overview:</h2>
-      <h5>{JSON.stringify(overview)}</h5>;
+      <h5>{JSON.stringify(overview)}</h5>
     </div>
   );
 }
